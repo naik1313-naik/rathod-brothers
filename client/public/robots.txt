@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Admin area — no value in the index and no reason to crawl it.
+Disallow: /admin
+Disallow: /admin/
+
+Sitemap: https://rathodbrothers.com/sitemap.xml

@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Technical illustration of a JCB backhoe loader">
+  <title>JCB-style backhoe loader — technical illustration (placeholder imagery)</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d2c48"/>
+      <stop offset="58%" stop-color="#123a5c"/>
+      <stop offset="100%" stop-color="#0a2237"/>
+    </linearGradient>
+    <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5c518"/>
+      <stop offset="100%" stop-color="#d99a06"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#20303d"/>
+      <stop offset="100%" stop-color="#101a23"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7fb6d8"/>
+      <stop offset="100%" stop-color="#2b5c7d"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <pattern id="soil" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#3a2f1c"/>
+      <circle cx="4" cy="4" r="1.6" fill="#4d3d24"/>
+      <circle cx="11" cy="10" r="1.4" fill="#4d3d24"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+
+  <!-- ground being cleared -->
+  <rect y="560" width="1200" height="240" fill="url(#soil)"/>
+  <path d="M0 560 H1200" stroke="#f5c518" stroke-opacity="0.35" stroke-width="2"/>
+
+  <!-- site hoarding / structures -->
+  <g fill="#0e2740" opacity="0.85">
+    <rect x="70" y="400" width="170" height="160"/>
+    <rect x="980" y="430" width="150" height="130"/>
+  </g>
+  <g stroke="#f5c518" stroke-opacity="0.25" stroke-width="6" stroke-dasharray="28 22">
+    <path d="M60 520 H300 M950 500 H1160"/>
+  </g>
+
+  <!-- ================= BACKHOE LOADER ================= -->
+  <g transform="translate(170 140)">
+    <!-- rear wheels -->
+    <g>
+      <circle cx="196" cy="452" r="80" fill="url(#dark)" stroke="#3c4f5e" stroke-width="4"/>
+      <circle cx="196" cy="452" r="46" fill="#0a1117"/>
+      <g fill="#4a5f6e">
+        <rect x="188" y="382" width="16" height="140" rx="6"/>
+        <rect x="126" y="444" width="140" height="16" rx="6"/>
+        <rect x="152" y="408" width="88" height="88" rx="8" fill="none" stroke="#4a5f6e" stroke-width="8"/>
+      </g>
+    </g>
+    <!-- front wheels -->
+    <g>
+      <circle cx="560" cy="470" r="66" fill="url(#dark)" stroke="#3c4f5e" stroke-width="4"/>
+      <circle cx="560" cy="470" r="32" fill="#0a1117"/>
+      <g stroke="#4a5f6e" stroke-width="7">
+        <path d="M560 438 V502 M528 470 H592 M537 447 L583 493 M583 447 L537 493"/>
+      </g>
+    </g>
+
+    <!-- chassis -->
+    <rect x="90" y="360" width="580" height="34" rx="8" fill="#16232e" stroke="#3d5464" stroke-width="3"/>
+
+    <!-- engine hood (rear) -->
+    <path d="M96 360 V244 h190 a14 14 0 0 1 14 14 V360 Z" fill="url(#bodyG)" stroke="#a87c05" stroke-width="3"/>
+    <g stroke="#a87c05" stroke-width="3" opacity="0.75">
+      <path d="M124 262 H286 M124 286 H286 M124 310 H286"/>
+    </g>
+    <text x="200" y="342" font-family="monospace" font-size="26" font-weight="700"
+          fill="#0a2237" text-anchor="middle" letter-spacing="2">3CX</text>
+
+    <!-- cab -->
+    <g>
+      <path d="M304 360 V150 a12 12 0 0 1 12-12 H470 a12 12 0 0 1 12 12 V360 Z"
+            fill="url(#dark)" stroke="#4a6274" stroke-width="3"/>
+      <path d="M330 160 H452 V252 H330 Z" fill="url(#glass)"/>
+      <path d="M330 160 L392 160 L330 206 Z" fill="#ffffff" fill-opacity="0.2"/>
+      <rect x="482" y="168" width="34" height="86" rx="5" fill="url(#glass)" opacity="0.85"/>
+      <rect x="304" y="266" width="190" height="18" rx="5" fill="#f5c518" fill-opacity="0.8"/>
+      <circle cx="394" cy="130" r="9" fill="#f5c518">
+        <animate attributeName="opacity" values="1;0.25;1" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- front loader arm + bucket -->
+    <g>
+      <path d="M496 300 L690 250" stroke="#0a1a24" stroke-width="32" stroke-linecap="round"/>
+      <path d="M496 300 L690 250" stroke="url(#bodyG)" stroke-width="22" stroke-linecap="round"/>
+      <circle cx="496" cy="300" r="15" fill="#1a2a36" stroke="#f5c518" stroke-width="4"/>
+      <rect x="520" y="272" width="120" height="14" rx="7" fill="#cfd8de" transform="rotate(-12 520 272)"/>
+      <!-- loader bucket -->
+      <path d="M676 214 h132 l-16 96 -104 6 -22-56 z" fill="#8d6a10" stroke="#f5c518" stroke-width="4"/>
+      <g fill="#f5c518">
+        <path d="M692 306 l14 20 14-22z"/>
+        <path d="M726 310 l14 20 14-22z"/>
+        <path d="M760 306 l12 18 12-20z"/>
+      </g>
+    </g>
+
+    <!-- rear excavator arm (backhoe) -->
+    <g>
+      <path d="M140 300 L64 168" stroke="#0a1a24" stroke-width="30" stroke-linecap="round"/>
+      <path d="M140 300 L64 168" stroke="url(#bodyG)" stroke-width="20" stroke-linecap="round"/>
+      <circle cx="140" cy="300" r="14" fill="#1a2a36" stroke="#f5c518" stroke-width="4"/>
+      <circle cx="64" cy="168" r="13" fill="#1a2a36" stroke="#f5c518" stroke-width="4"/>
+      <!-- dipper + narrow bucket -->
+      <path d="M64 168 L-6 254" stroke="#0a1a24" stroke-width="24" stroke-linecap="round"/>
+      <path d="M64 168 L-6 254" stroke="#d99a06" stroke-width="15" stroke-linecap="round"/>
+      <path d="M-46 250 h66 l-8 62 -50 2 -12-38 z" fill="#8d6a10" stroke="#f5c518" stroke-width="3"
+            transform="translate(60 0)"/>
+      <g fill="#f5c518" transform="translate(60 0)">
+        <path d="M-34 306 l10 16 10-18z"/>
+        <path d="M-8 310 l10 16 10-18z"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- cleared ground vs uncleared hatching -->
+  <g>
+    <rect x="700" y="560" width="500" height="240" fill="#f5c518" fill-opacity="0.05"/>
+    <text x="950" y="600" font-family="monospace" font-size="15" letter-spacing="3"
+          fill="#f5c518" fill-opacity="0.55" text-anchor="middle">CLEARED</text>
+  </g>
+
+  <text x="600" y="762" font-family="monospace" font-size="20" letter-spacing="6"
+        fill="#f5c518" fill-opacity="0.7" text-anchor="middle">BACKHOE // SITE CLEARANCE</text>
+  <text x="1140" y="762" font-family="monospace" font-size="16" letter-spacing="2"
+        fill="#ffffff" fill-opacity="0.4" text-anchor="end">PLACEHOLDER VISUAL</text>
+</svg>

@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Technical illustration of a tracked excavator">
+  <title>Excavator — technical illustration (placeholder imagery)</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d2c48"/>
+      <stop offset="58%" stop-color="#123a5c"/>
+      <stop offset="100%" stop-color="#0a2237"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5c518"/>
+      <stop offset="100%" stop-color="#d99a06"/>
+    </linearGradient>
+    <linearGradient id="armG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd34d"/>
+      <stop offset="100%" stop-color="#e0a40a"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#20303d"/>
+      <stop offset="100%" stop-color="#101a23"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7fb6d8"/>
+      <stop offset="100%" stop-color="#2b5c7d"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#f5c518" stroke-opacity="0.22" stroke-width="3"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+
+  <!-- horizon + ground -->
+  <rect y="560" width="1200" height="240" fill="#0a1c2c"/>
+  <path d="M0 560 H1200" stroke="#f5c518" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M0 585 H1200" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+
+  <!-- background structure silhouettes -->
+  <g fill="#0e2740" opacity="0.85">
+    <rect x="90" y="380" width="150" height="180"/>
+    <rect x="115" y="330" width="100" height="50"/>
+    <rect x="980" y="420" width="130" height="140"/>
+    <rect x="1005" y="380" width="80" height="40"/>
+  </g>
+
+  <!-- ================= EXCAVATOR ================= -->
+  <g transform="translate(180 120)">
+    <!-- tracks -->
+    <g>
+      <rect x="20" y="392" width="330" height="76" rx="38" fill="url(#dark)" stroke="#3c4f5e" stroke-width="3"/>
+      <rect x="46" y="410" width="278" height="40" rx="20" fill="#0a1117"/>
+      <g fill="#4a5f6e">
+        <circle cx="52" cy="430" r="13"/><circle cx="96" cy="430" r="13"/>
+        <circle cx="140" cy="430" r="13"/><circle cx="184" cy="430" r="13"/>
+        <circle cx="228" cy="430" r="13"/><circle cx="272" cy="430" r="13"/>
+        <circle cx="316" cy="430" r="13"/>
+      </g>
+      <g stroke="#f5c518" stroke-opacity="0.5" stroke-width="2" fill="none">
+        <path d="M52 417 L96 443 M96 417 L52 443"/>
+      </g>
+    </g>
+
+    <!-- slew ring -->
+    <rect x="140" y="368" width="150" height="30" rx="8" fill="#1a2a36" stroke="#46596a" stroke-width="2"/>
+
+    <!-- lower body / house -->
+    <path d="M120 380 V250 H300 L330 380 Z" fill="url(#metal)" stroke="#a87c05" stroke-width="3"/>
+    <path d="M120 380 V250 H180 V380 Z" fill="url(#hatch)" opacity="0.6"/>
+    <rect x="186" y="262" width="106" height="104" rx="6" fill="#16232e" stroke="#3d5464" stroke-width="2"/>
+    <g stroke="#f5c518" stroke-opacity="0.45" stroke-width="2">
+      <path d="M186 290 H292 M186 318 H292 M186 346 H292"/>
+    </g>
+    <text x="239" y="412" font-family="monospace" font-size="22" font-weight="700"
+          fill="#0a2237" text-anchor="middle" letter-spacing="3">RB-01</text>
+
+    <!-- cab -->
+    <path d="M186 250 V132 a10 10 0 0 1 10-10 H266 a10 10 0 0 1 10 10 V250 Z"
+          fill="url(#dark)" stroke="#4a6274" stroke-width="3"/>
+    <path d="M200 146 H256 V214 H200 Z" fill="url(#glass)"/>
+    <path d="M200 146 L228 146 L200 176 Z" fill="#ffffff" fill-opacity="0.22"/>
+    <rect x="186" y="222" width="90" height="16" rx="4" fill="#f5c518" fill-opacity="0.8"/>
+    <!-- beacon -->
+    <circle cx="272" cy="128" r="9" fill="#f5c518">
+      <animate attributeName="opacity" values="1;0.25;1" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- counterweight -->
+    <path d="M300 250 h56 a14 14 0 0 1 14 14 V372 H300 Z" fill="#16232e" stroke="#3d5464" stroke-width="3"/>
+
+    <!-- boom -->
+    <g>
+      <path d="M316 214 L470 118" stroke="#0a1a24" stroke-width="34" stroke-linecap="round"/>
+      <path d="M316 214 L470 118" stroke="url(#armG)" stroke-width="24" stroke-linecap="round"/>
+      <circle cx="316" cy="214" r="17" fill="#1a2a36" stroke="#f5c518" stroke-width="4"/>
+      <circle cx="470" cy="118" r="15" fill="#1a2a36" stroke="#f5c518" stroke-width="4"/>
+      <!-- hydraulic cylinder -->
+      <g>
+        <rect x="330" y="196" width="112" height="15" rx="7" fill="#2b3d4b" transform="rotate(-35 330 196)"/>
+        <rect x="360" y="176" width="70" height="15" rx="7" fill="#cfd8de" transform="rotate(-35 360 176)"/>
+      </g>
+    </g>
+
+    <!-- arm (stick) -->
+    <g>
+      <path d="M470 118 L604 226" stroke="#0a1a24" stroke-width="30" stroke-linecap="round"/>
+      <path d="M470 118 L604 226" stroke="url(#armG)" stroke-width="21" stroke-linecap="round"/>
+      <circle cx="604" cy="226" r="14" fill="#1a2a36" stroke="#f5c518" stroke-width="4"/>
+    </g>
+
+    <!-- bucket -->
+    <g>
+      <path d="M604 226 L668 300" stroke="#0a1a24" stroke-width="22" stroke-linecap="round"/>
+      <path d="M604 226 L668 300" stroke="#d99a06" stroke-width="14" stroke-linecap="round"/>
+      <path d="M652 300 h84 l-14 96 -66 4 -20 -56 z" fill="#8d6a10" stroke="#f5c518" stroke-width="3"/>
+      <g fill="#f5c518">
+        <path d="M656 392 l14 22 14-24z"/>
+        <path d="M688 396 l14 22 14-24z"/>
+        <path d="M720 392 l12 20 12-22z"/>
+      </g>
+    </g>
+
+    <!-- spoil pile -->
+    <path d="M690 468 q70-58 140 0 z" fill="#0e2b3f"/>
+    <path d="M700 468 q60-46 120 0 z" fill="#143a55"/>
+  </g>
+
+  <!-- measurement / technical annotation -->
+  <g stroke="#f5c518" stroke-opacity="0.5" stroke-width="2" fill="none">
+    <path d="M60 700 H1140"/>
+    <path d="M60 692 V708 M1140 692 V708"/>
+  </g>
+  <text x="600" y="734" font-family="monospace" font-size="20" letter-spacing="6"
+        fill="#f5c518" fill-opacity="0.7" text-anchor="middle">EXCAVATOR // TRACKED</text>
+  <text x="1140" y="700" font-family="monospace" font-size="16" letter-spacing="2"
+        fill="#ffffff" fill-opacity="0.4" text-anchor="end">PLACEHOLDER VISUAL</text>
+</svg>

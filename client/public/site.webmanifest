@@ -1,0 +1,18 @@
+{
+  "name": "Rathod Brothers — Earthmovers & Heavy Machinery Services",
+  "short_name": "Rathod Brothers",
+  "description": "Excavator sale & service, tipper transport, JCB earthmoving and site clearance across Karnataka.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a3158",
+  "theme_color": "#0a3158",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

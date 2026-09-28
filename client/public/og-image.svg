@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Rathod Brothers — Earthmovers and Heavy Machinery Services">
+  <title>Rathod Brothers — Earthmovers &amp; Heavy Machinery Services</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#0d2c48" />
+      <stop offset="45%" stop-color="#0a3158" />
+      <stop offset="100%" stop-color="#061c30" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8d75c" />
+      <stop offset="50%" stop-color="#f1bd18" />
+      <stop offset="100%" stop-color="#d59b00" />
+    </linearGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#grid)" />
+  <rect x="0" y="0" width="1200" height="8" fill="url(#gold)" />
+
+  <!-- mark -->
+  <g transform="translate(84 96)">
+    <circle cx="44" cy="44" r="41" fill="none" stroke="#ffffff" stroke-width="6" />
+    <circle cx="44" cy="44" r="29" fill="none" stroke="#f1bd18" stroke-width="4" />
+    <g stroke="#ffffff" stroke-width="5" stroke-linecap="square">
+      <line x1="44" y1="-2" x2="44" y2="8" />
+      <line x1="44" y1="80" x2="44" y2="90" />
+      <line x1="-2" y1="44" x2="8" y2="44" />
+      <line x1="80" y1="44" x2="90" y2="44" />
+      <line x1="9.4" y1="9.4" x2="16.6" y2="16.6" />
+      <line x1="71.4" y1="71.4" x2="78.6" y2="78.6" />
+      <line x1="78.6" y1="9.4" x2="71.4" y2="16.6" />
+      <line x1="16.6" y1="71.4" x2="9.4" y2="78.6" />
+    </g>
+    <text x="44" y="44" text-anchor="middle" dominant-baseline="central" font-family="Manrope, system-ui, sans-serif" font-size="27" font-weight="800" fill="#0a3158">RB</text>
+  </g>
+
+  <!-- wordmark -->
+  <text x="230" y="152" font-family="Manrope, system-ui, sans-serif" font-size="46" font-weight="800" fill="#ffffff">RATHOD <tspan fill="#f1bd18">BROTHERS</tspan></text>
+
+  <!-- headline -->
+  <text x="84" y="290" font-family="Manrope, system-ui, sans-serif" font-size="64" font-weight="800" fill="#ffffff">Earthmovers &amp;</text>
+  <text x="84" y="362" font-family="Manrope, system-ui, sans-serif" font-size="64" font-weight="800" fill="#f1bd18">Heavy Machinery Services</text>
+
+  <!-- services row -->
+  <g font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" fill="#adc5de">
+    <text x="84" y="440">Excavator Sale &amp; Service</text>
+    <text x="84" y="472">Tipper Transport</text>
+    <text x="84" y="504">JCB Earthmoving</text>
+    <text x="330" y="440">Site Clearance</text>
+    <text x="330" y="472">Local &amp; State-wide</text>
+    <text x="330" y="504">Karnataka, India</text>
+  </g>
+
+  <!-- contact strip -->
+  <rect x="700" y="392" width="416" height="150" fill="#ffffff" fill-opacity="0.06" stroke="#f1bd18" stroke-opacity="0.4" />
+  <text x="732" y="440" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#adc5de">Call</text>
+  <text x="732" y="474" font-family="Manrope, system-ui, sans-serif" font-size="27" font-weight="800" fill="#ffffff">+91 90193 33304</text>
+  <text x="732" y="512" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="600" fill="#adc5de">info@rathodbrothers.com</text>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "name": "rathod-brothers",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rathod Brothers — Earthmovers & Heavy Machinery Services. Full-stack website with quote/enquiry system and admin dashboard.",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "scripts": {
+    "dev": "npm run dev --workspace=server & npm run dev --workspace=client",
+    "dev:client": "npm run dev --workspace=client",
+    "dev:server": "npm run dev --workspace=server",
+    "build": "npm run build --workspace=server && npm run build --workspace=client",
+    "build:client": "npm run build --workspace=client",
+    "build:server": "npm run build --workspace=server",
+    "start": "npm run start --workspace=server",
+    "typecheck": "npm run typecheck --workspace=server && npm run typecheck --workspace=client",
+    "lint": "npm run lint --workspace=server && npm run lint --workspace=client",
+    "test": "npm run test --workspace=server",
+    "db:migrate": "npm run db:migrate --workspace=server",
+    "db:seed": "npm run db:seed --workspace=server",
+    "db:reset": "npm run db:reset --workspace=server",
+    "verify": "npm run typecheck && npm run lint && npm run test && npm run build"
+  }
+}

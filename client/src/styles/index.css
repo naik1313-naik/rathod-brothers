@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+@layer base {
+  :root {
+    --rb-nav-height: 76px;
+    --rb-ease-industrial: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  * {
+    @apply border-navy-600/10;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Anchor links land below the fixed navbar instead of under it. */
+    scroll-padding-top: calc(var(--rb-nav-height) + 12px);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-sand-100 font-sans text-ink antialiased;
+    /* Prevents any child from creating a horizontal scrollbar on 320px screens. */
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-navy-600;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible, on-brand focus ring for keyboard users only. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-sand-100;
+  }
+
+  .on-dark :focus-visible {
+    @apply ring-offset-navy-700;
+  }
+
+  ::selection {
+    @apply bg-gold text-navy-800;
+  }
+
+  /* Respect reduced-motion: the Loader and CustomCursor also check this, but
+     this catches anything purely CSS-driven. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+@layer components {
+  /* Keyboard-only shortcut past the navigation. Hidden until focused, then
+     pinned to the top-left so it never shifts the layout. */
+  .skip-link {
+    @apply sr-only;
+  }
+
+  .skip-link:focus {
+    @apply not-sr-only fixed left-4 top-4 z-[300] inline-flex items-center rounded-lg bg-gold px-4 py-2.5 font-display text-[13px] font-extrabold text-navy-800 shadow-card-lg;
+  }
+
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 sm:px-7 lg:px-10;
+  }
+
+  /* Small uppercase label used above every section heading. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 text-[10px] font-extrabold uppercase tracking-eyebrow text-ink-mute;
+  }
+
+  .eyebrow::before {
+    content: '';
+    @apply block h-0.5 w-7 bg-gold;
+  }
+
+  .eyebrow-on-dark {
+    @apply text-navy-200;
+  }
+
+  /* --- Buttons ----------------------------------------------------------- */
+  .btn {
+    @apply relative inline-flex select-none items-center justify-center gap-2.5 overflow-hidden
+           px-6 py-3.5 text-[12px] font-extrabold uppercase tracking-wide2
+           transition-all duration-300 ease-industrial
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2
+           disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-navy-600 text-white shadow-card hover:bg-navy-700 hover:shadow-card-lg;
+  }
+
+  .btn-gold {
+    @apply btn bg-gold-sheen text-navy-800 shadow-gold hover:brightness-110;
+  }
+
+  .btn-ghost {
+    @apply btn border border-navy-600/25 bg-transparent text-navy-600
+           hover:border-navy-600 hover:bg-navy-600 hover:text-white;
+  }
+
+  .btn-ghost-on-dark {
+    @apply btn border border-white/30 bg-white/5 text-white backdrop-blur-sm
+           hover:border-gold hover:bg-gold hover:text-navy-800;
+  }
+
+  .btn-whatsapp {
+    @apply btn bg-[#1FA855] text-white shadow-card hover:bg-[#178c46];
+  }
+
+  .btn-sm {
+    @apply px-4 py-2.5 text-[11px];
+  }
+
+  /* Gold wipe that sweeps across a button on hover. */
+  .btn-sweep::after {
+    content: '';
+    @apply absolute inset-0 -z-0 origin-bottom scale-y-0 bg-gold transition-transform
+           duration-300 ease-industrial;
+  }
+
+  .btn-sweep:hover::after {
+    @apply scale-y-100;
+  }
+
+  .btn-sweep > * {
+    @apply relative z-10;
+  }
+
+  /* --- Surfaces ---------------------------------------------------------- */
+  .panel-dark {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-sm;
+  }
+
+  .panel-light {
+    @apply border border-navy-600/12 bg-white shadow-card;
+  }
+
+  /* Faint engineering grid, masked so it fades out at the edges. */
+  .grid-overlay {
+    @apply pointer-events-none absolute inset-0 bg-grid-light bg-grid;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  }
+
+  .grid-overlay-dark {
+    @apply grid-overlay bg-grid-dark;
+  }
+
+  /* Diagonal hazard hatching — used sparingly on machinery accents. */
+  .hazard-stripe {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgba(241, 189, 24, 0.9) 0 10px,
+      transparent 10px 20px
+    );
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1.5px currentColor;
+    color: transparent;
+  }
+
+  /* --- Forms ------------------------------------------------------------- */
+  .field-label {
+    @apply mb-1.5 block text-[10px] font-extrabold uppercase tracking-wide2 text-ink-mute;
+  }
+
+  .field {
+    @apply w-full rounded-lg border border-navy-600/15 bg-sand-50 px-4 py-3 text-[15px] text-ink
+           outline-none transition-colors duration-200
+           placeholder:text-ink-faint
+           focus:border-navy-600 focus:bg-white focus:ring-4 focus:ring-navy-600/10
+           disabled:bg-sand-200;
+  }
+
+  .field-error {
+    @apply border-red-500/70 bg-red-50/60 focus:border-red-500 focus:ring-red-500/15;
+  }
+
+  .field-error-msg {
+    @apply mt-1.5 flex items-center gap-1.5 text-[12px] font-medium text-red-600;
+  }
+
+  select.field {
+    /* Custom chevron; hides the OS one so all platforms match. */
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2351606d' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    padding-right: 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+@layer utilities {
+  .text-shadow-hard {
+    text-shadow: 0 2px 0 rgba(10, 49, 88, 0.06);
+  }
+
+  /* Ensures a11y contrast for gold text on navy. */
+  .text-gold-contrast {
+    color: #ffd75e;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
